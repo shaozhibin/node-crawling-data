@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/imagehover.css/1.0/css/imagehover.min.css" rel="stylesheet" media="all">
+    <style>
+    	body {
+    		font-family: Helvetica Neue,PingFang SC,Microsoft Yahei, sans-serif;
+    	}
+    	.container{
+    		width: 1260px;
+    		margin: auto;
+    	}
+		.item {
+			width: 400px;
+			height: 328px;
+			margin: 10px;
+			float: left;
+			overflow: hidden;
+			box-sizing: border-box;
+		    transition:  .5s ease;
+		    cursor: pointer;
+		    box-shadow: none;
+
+		}
+		.item:hover {
+			box-shadow: 0px 0px 10px 10px #F5F1ED;
+		}
+		.item img {
+			width: 100%;
+			height: 100%;
+		}
+		.fix {
+			clear: both;
+		}
+		.figcaption {
+			background-color: red;
+		}
+    </style>
+  </head>
+  <body>
+  	<div class="container">
+	    <h1><%= title %></h1>
+		<div class="rooms">
+	    <% listData.forEach(function(item){ %>
+	    	<% if(item.avatar){ %>
+	  		<figure class="imghvr-fold-down item">
+			    <img src="<%= item.bgImg %>" alt="example-image">
+			    <figcaption>
+			    <h3><%= item.room_name %></h3>
+			    <p><%= item.position %></p>
+			    </figcaption>
+			    <a href="javascript:;"></a>
+			</figure>
+			<% } %>
+	    <% }) %>
+	    	<div class="fix"></div>
+	  	</div>
+  	</div>
+  </body>
+</html>
