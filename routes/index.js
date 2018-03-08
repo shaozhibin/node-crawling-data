@@ -18,7 +18,7 @@ http.get(url, function(res) {
         // console.log('html:', html)
     });
     // 数据获取结束
-    res.on('end', function() {s
+    res.on('end', function() {
         // 过滤html的信息
         listData = filterList(html);
         console.log('抓取数据成功！')
